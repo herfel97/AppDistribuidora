@@ -1,0 +1,50 @@
+
+<div class=" content">
+    <div class=" col-lg-6 col-md-12">
+      <div class="login" id="lgBox">
+        <form class="custom-form" [formGroup]="loginForm" (ngSubmit)="buscar(loginForm.value)" >
+          <div class="loginRow"><h4 class="text-center">Productos por bodega</h4></div>
+          <div class="loginRow">
+            <input type="text" #id name="id" ngModel = "id" class="form-control"  formControlName ="id" placeholder="id" required />
+            <input type="submit" class="fadeIn fourth" value="Buscar">
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <a href=""> 1</a>
+
+    <div class=" row">
+      <div class=" col-lg-6 col-md-12">
+        <div class=" card">
+          <div class=" card-header">
+            <h4 class=" card-title">Stock de Bodega</h4>
+          </div>
+          <div class=" card-body">
+            <div class=" table-responsive">
+              <table class=" table tablesorter" >
+                <thead class=" text-primary">
+                  
+                  <tr>
+                    <th>ID</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Unidad de Medida</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor='let producto of productos'>
+                    <th scope="row">{{ producto.codigo}}</th>
+                    <td>{{producto.nombre}}</td>
+                    <td>{{producto.precio}}</td>
+                    <td>{{producto.unidadMedida}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
